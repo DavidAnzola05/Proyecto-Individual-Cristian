@@ -1,0 +1,79 @@
+### 
+
+
+### Obtener todas las tareas
+GET http://127.0.0.1:8000/api/tareas/
+Authorization: Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjJhYWM0MWY3NTA4OGZlOGUwOWEwN2Q0NDRjZmQ2YjhjZTQ4MTJhMzEiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vY3Jpc3RpYW4tNjViMmMiLCJhdWQiOiJjcmlzdGlhbi02NWIyYyIsImF1dGhfdGltZSI6MTc3MjQ1NjY4MiwidXNlcl9pZCI6Iks1Q0h3N2x1QkZQZlAwM1poelE0TU9IekdSdDEiLCJzdWIiOiJLNUNIdzdsdUJGUGZQMDNaaHpRNE1PSHpHUnQxIiwiaWF0IjoxNzcyNDU2NjgyLCJleHAiOjE3NzI0NjAyODIsImVtYWlsIjoiYXByZW5kaXowNUBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImZpcmViYXNlIjp7ImlkZW50aXRpZXMiOnsiZW1haWwiOlsiYXByZW5kaXowNUBnbWFpbC5jb20iXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.cCKjCCmKIVQztPaKustLlpfOMSIqtaTuAmP7X71kG1syRVYlbuM-Uu4CtKepbGY78WS1zMpjpC375CcxmOBDDKbXkqP4Pt6_HlgQu2SoUfIEKK6k2WdhrZZR45MngGVcU6LiCZHjC3fg7ygSccY6lFNmSiRJX0p_SFgzXM8lTg-cBKAEcDtZzo1znryUNQ9N-QZMqX7DUAYp4W1rdipecnWl5Sa9KuDVmWvu6wyJQ4QXMdoX1GCItOdl35rLdCejatt6CsGdLt3bZtWS5TSMU_PY43xGBY52OrGIsWJLS4nS5QVjKBeRcDlkTQ8bzUkY_5XPSvsWxEn8Bi8bXeLFLg
+
+
+### Crear una nueva tarea (POST)
+POST http://127.0.0.1:8000/api/tareas/
+Content-Type: application/json
+
+{
+    "titulo": "Tarea para probar el delete",
+    "descripcion": "Probando delete",
+    "estado": "Eliminado"
+}
+
+
+### Actualizar una tarea (PUT)
+PUT http://127.0.0.1:8000/api/tareas/bdQFbeF8NBwoSFqXC4ky/
+Content-Type: application/json
+
+{
+    "titulo": "Título editado dos veces",
+    "descripcion": "Esta descripción ha sido actualizada",
+    "estado": "En Proceso"
+}
+
+
+### Borrar una tarea
+DELETE http://127.0.0.1:8000/api/tareas/AMYn0Y2pP6kX3zAfCNzs/
+
+
+### 1. Registrar un nuevo usuario (POST)
+POST http://127.0.0.1:8000/api/auth/registro/
+Content-Type: application/json
+
+{
+    "email": "aprendiz05@gmail.com",
+    "password": "123456"
+}
+
+
+### 2. Iniciar sesión para conseguir el Token (POST)
+POST http://127.0.0.1:8000/api/auth/login/
+Content-Type: application/json
+
+{
+    "email": "aprendiz05@gmail.com",
+    "password": "123456"
+}
+
+
+### 3. Crear una tarea USANDO EL TOKEN (POST)
+POST http://127.0.0.1:8000/api/tareas/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjJjMjdhZmY1YzlkNGU1MzVkNWRjMmMwNWM1YTE2N2FlMmY1NjgxYzIiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vY3Jpc3RpYW4tNjViMmMiLCJhdWQiOiJjcmlzdGlhbi02NWIyYyIsImF1dGhfdGltZSI6MTc3MjAzNzMzOCwidXNlcl9pZCI6Iks1Q0h3N2x1QkZQZlAwM1poelE0TU9IekdSdDEiLCJzdWIiOiJLNUNIdzdsdUJGUGZQMDNaaHpRNE1PSHpHUnQxIiwiaWF0IjoxNzcyMDM3MzM4LCJleHAiOjE3NzIwNDA5MzgsImVtYWlsIjoiYXByZW5kaXowNUBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImZpcmViYXNlIjp7ImlkZW50aXRpZXMiOnsiZW1haWwiOlsiYXByZW5kaXowNUBnbWFpbC5jb20iXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.IFOgB1FN26Mp55whuyZ-jxEXNlPncRXaubQexRCGLBIssmrY17mMUQUmWGJgcIV3jGbA_pLpzyaW_vPXFA6HBRd05KmBSVHxeYNb-PhlmRFE6baeE3aReQDVgTKO0BvMOK91-isrmjqgZSIloQaE4qptEH0JfWupL3b2YRPvRnRD-eBPoOuPmxXYfaXnRdSv_ey6dMxvC-ryvClASKwaz75MLjIZRDilMRVYzttbY6cXw82trT0LufTmlrC_lW4H4ERxDBYcEjHu_1Q8sNvNJEbNFmBHATOoKOR5NlhmRFIpTJPNaBnUE3MsHr8vyK7Ga9Wi5XnWVtzUo-1dh953tw
+
+{
+    "titulo": "Tarea con API Segura",
+    "descripcion": "Mi primera tarea usando JWT de Firebase"
+}
+###
+POST http://127.0.0.1:8000/api/perfil/foto/
+Authorization: Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjJhYWM0MWY3NTA4OGZlOGUwOWEwN2Q0NDRjZmQ2YjhjZTQ4MTJhMzEiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vY3Jpc3RpYW4tNjViMmMiLCJhdWQiOiJjcmlzdGlhbi02NWIyYyIsImF1dGhfdGltZSI6MTc3MjQ2OTY4OCwidXNlcl9pZCI6Iks1Q0h3N2x1QkZQZlAwM1poelE0TU9IekdSdDEiLCJzdWIiOiJLNUNIdzdsdUJGUGZQMDNaaHpRNE1PSHpHUnQxIiwiaWF0IjoxNzcyNDY5Njg4LCJleHAiOjE3NzI0NzMyODgsImVtYWlsIjoiYXByZW5kaXowNUBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImZpcmViYXNlIjp7ImlkZW50aXRpZXMiOnsiZW1haWwiOlsiYXByZW5kaXowNUBnbWFpbC5jb20iXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.zfzYUs5m588V6pVZOUlC3AKe2wcA0eZIFs9rB6cvuJ9in-tIXsHtUtaLx2WIqZMTkq-qvlKaBwIcilxHCXg8rXcnhUwnIwX9xJyZTFPlkVNW5pMWPIFWRf7iPaKquS6yQsSxqT1w56g3tSxNhea79jy58PaWPB93UwmGQbMlNzvjni6V_X7CkGNh-Ao8ZQl48AvnEc8O4TXGm5XrH8kli91N2lzSWY8l-QuvsE5SQS7QY-wqFueE6dRPYYDQ0FgnZ1ZMfh-94fCWl6GzUPY60PpTmPr__nT-YVaxJn2qdA_VmWmArrJ0Mx7fyif47VcFADldr-vZMgEWc9_SXdlnGg
+Content-Type: multipart/form-data; boundary=MyBoundary
+
+--MyBoundary
+Content-Disposition: form-data; name="imagen"; filename="avatar.jpg"
+Content-Type: image/jpeg
+
+< ./avatar.jpg
+--MyBoundary--
+
+###
+GET http://127.0.0.1:8000/api/tareas/?limit=2&last_doc_id=9EB52DdGIdZP8bfidFUQ
+Authorization: Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjJhYWM0MWY3NTA4OGZlOGUwOWEwN2Q0NDRjZmQ2YjhjZTQ4MTJhMzEiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vY3Jpc3RpYW4tNjViMmMiLCJhdWQiOiJjcmlzdGlhbi02NWIyYyIsImF1dGhfdGltZSI6MTc3MjYzMDY1MSwidXNlcl9pZCI6Iks1Q0h3N2x1QkZQZlAwM1poelE0TU9IekdSdDEiLCJzdWIiOiJLNUNIdzdsdUJGUGZQMDNaaHpRNE1PSHpHUnQxIiwiaWF0IjoxNzcyNjMwNjUxLCJleHAiOjE3NzI2MzQyNTEsImVtYWlsIjoiYXByZW5kaXowNUBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImZpcmViYXNlIjp7ImlkZW50aXRpZXMiOnsiZW1haWwiOlsiYXByZW5kaXowNUBnbWFpbC5jb20iXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.A8IKOR_noMfPytmyy2bPb7_43VDRlnEbR17qC9hpZUQdrRkeriUenQB4HA_8YAstdh-3u3_ROoSkzoX7VqupQRhPWyvQzaLL4tUU_c_EbXm_fX_i71bOYHvR-cjDcxYEZ8I1xSORpS2p47TRURwFcV50fEpPt1pCpy51ICGKlSSb-GpxW9trYKsn7WPaOI31B4mxP2FuXTDo_F8oql6Gsiq8BjRe-HE0Og_VozuS2Fy8NWmDt7pd-z1QG8DITMPFhzlRUepGMXIV787jivGIOXqJUtY5MQM5Vy80i9o-XQjcLPJTipHNe9eSXUhqqgZN_t2FdAm524LEPG7XKspGiA
+Content-Type: application/json
